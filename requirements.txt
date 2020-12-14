@@ -1,0 +1,3 @@
+python-telegram-bot==12.8
+boto3==1.14.58
+gspread==3.6.0
