@@ -35,7 +35,7 @@ def lambda_handler(request, context):
     pusher: PusherBot = PusherBot()
     chats = get_telegram_chats()
 
-    for chat in chats["chats"]:
+    for chat in filter(lambda chat1: chat1["enabled"] is True, chats["chats"]):
         records: List = spreadsheet.get_records_from_sheet(chat["sheetname"], chat["page"])
         birthdays = filter(is_birthday, records)
         for birthday in birthdays:
