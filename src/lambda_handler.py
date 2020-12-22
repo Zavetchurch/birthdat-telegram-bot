@@ -40,6 +40,3 @@ def lambda_handler(request, context):
         birthdays = filter(is_birthday, records)
         for birthday in birthdays:
             pusher.push_notification(chat["celebratePattern"].format(birthday[NAME_KEY]), chat["id"])
-
-
-lambda_handler(None, None)
