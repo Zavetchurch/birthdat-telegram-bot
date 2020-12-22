@@ -1,7 +1,8 @@
 import os
 import zipfile
 
-TEMP_DIR = "build_temp"
+TEMP_DIR = 'build_temp'
+VENV_PATH = 'venv/Lib/site-packages'
 
 
 def zipdir(path, ziph):
@@ -19,6 +20,6 @@ if __name__ == '__main__':
 
     zipf = zipfile.ZipFile('birthday-bot.zip', 'w', zipfile.ZIP_DEFLATED)
 
-    zipdir('venv/Lib/site-packages', zipf)
+    zipdir(VENV_PATH, zipf)
     zipdir('src/', zipf)
     zipf.close()
